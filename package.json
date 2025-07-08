@@ -1,6 +1,6 @@
 {
   "name": "@romatech/order-by",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": false,
   "description": "Provides array functions",
   "author": "RomaTech/Leandro Romanelli",
