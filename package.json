@@ -1,9 +1,13 @@
 {
   "name": "@romatech/order-by",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": false,
-  "description": "Provides array ordening functions",
+  "description": "Provides array functions",
   "author": "RomaTech/Leandro Romanelli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leandroromanelli/romatech-order-by"
+  },
   "license": "MIT",
   "main": "index.js",
   "module": "index.mjs",
@@ -19,12 +23,15 @@
     "test": "jest"
   },
   "keywords": [
+    "array",
     "sort",
     "orderBy",
-    "array",
-    "chain",
     "thenBy",
-    "multisort"
+    "distinct",
+    "prototype",
+    "utilities",
+    "javascript",
+    "typescript"
   ],
   "devDependencies": {
     "jest": "^29.7.0"

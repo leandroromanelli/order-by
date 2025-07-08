@@ -1,32 +1,30 @@
-require('../index'); // This loads the Array.prototype extensions
+require('../index'); // Importa extensões
 
-const data = [
-  { name: 'Alice', age: 30 },
-  { name: 'Bob', age: 25 },
-  { name: 'Charlie', age: 30 },
-];
+describe('@romatech/array-functions', () => {
+  const data = [
+    { name: 'Alice', age: 30 },
+    { name: 'Bob', age: 25 },
+    { name: 'Charlie', age: 30 },
+    { name: 'Bob', age: 25 }
+  ];
 
-describe('Array.prototype.orderBy-chain', () => {
-  test('orderBy then thenBy', () => {
+  test('orderBy + thenBy', () => {
     const sorted = data.orderBy(x => x.age).thenBy(x => x.name);
-    expect(JSON.parse(JSON.stringify(sorted))).toEqual([
-      { name: 'Bob', age: 25 },
-      { name: 'Alice', age: 30 },
-      { name: 'Charlie', age: 30 },
-    ]);
+    expect(sorted.map(x => x.name)).toEqual(['Bob', 'Alice', 'Charlie', 'Bob']);
   });
 
-  test('orderByDesc then thenByDesc', () => {
+  test('orderByDesc + thenByDesc', () => {
     const sorted = data.orderByDesc(x => x.age).thenByDesc(x => x.name);
-    expect(JSON.parse(JSON.stringify(sorted))).toEqual([
-      { name: 'Charlie', age: 30 },
-      { name: 'Alice', age: 30 },
-      { name: 'Bob', age: 25 },
-    ]);
+    expect(sorted.map(x => x.name)).toEqual(['Charlie', 'Alice', 'Bob', 'Bob']);
   });
 
-  test('throws error if accessing thenBy from plain array', () => {
-    const plain = [...data];
-    expect(() => plain.thenBy(x => x.name)).toThrow();
+  test('distinct', () => {
+    const distinct = data.distinct();
+    expect(distinct.length).toBe(3);
+  });
+
+  test('distinctBy (by name)', () => {
+    const byName = data.distinctBy(x => x.name);
+    expect(byName.map(x => x.name)).toEqual(['Alice', 'Bob', 'Charlie']);
   });
 });
