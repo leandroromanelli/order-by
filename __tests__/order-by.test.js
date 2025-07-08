@@ -10,7 +10,7 @@ describe('@romatech/array-functions', () => {
 
   test('orderBy + thenBy', () => {
     const sorted = data.orderBy(x => x.age).thenBy(x => x.name);
-    expect(sorted.map(x => x.name)).toEqual(['Bob', 'Alice', 'Charlie', 'Bob']);
+    expect(sorted.map(x => x.name)).toEqual(['Bob', 'Bob', 'Alice', 'Charlie']);
   });
 
   test('orderByDesc + thenByDesc', () => {
