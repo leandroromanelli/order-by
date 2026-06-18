@@ -1,21 +1,34 @@
 {
   "name": "@romatech/order-by",
-  "version": "1.1.1",
-  "private": false,
-  "description": "Provides array functions",
+  "version": "1.2.0",
+  "description": "Chainable multi-level sorting for JavaScript arrays via orderBy() and thenBy()",
   "author": "RomaTech/Leandro Romanelli",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/leandroromanelli/romatech-order-by"
+    "url": "https://github.com/RomaTech-LTDA/order-by"
   },
-  "license": "MIT",
+  "homepage": "https://github.com/RomaTech-LTDA/order-by#readme",
+  "bugs": {
+    "url": "https://github.com/RomaTech-LTDA/order-by/issues"
+  },
   "main": "index.js",
   "module": "index.mjs",
   "types": "index.d.ts",
   "exports": {
-    "require": "./index.js",
-    "import": "./index.mjs"
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
   },
+  "files": [
+    "index.js",
+    "index.mjs",
+    "index.d.ts",
+    "LICENSE",
+    "README.md"
+  ],
   "engines": {
     "node": ">=18"
   },
@@ -23,16 +36,16 @@
     "test": "jest"
   },
   "keywords": [
-    "array",
     "sort",
     "orderBy",
+    "array",
+    "chain",
     "thenBy",
-    "distinct",
-    "prototype",
-    "utilities",
-    "javascript",
-    "typescript"
+    "multisort"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "jest": "^29.7.0"
   }
