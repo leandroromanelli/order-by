@@ -33,8 +33,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **Behavior change:** `null`, `undefined` and `NaN` sort keys are equal to each
   other and smaller than every other key: they come first with
   `orderBy`/`thenBy` and last with `orderByDesc`/`thenByDesc`, as `null` does
-  in C#. Before, a `null` key was compared as `0`, so it now moves before
-  negative numbers: `[-1, null, 1]` used to stay in that order and now becomes
+  in C#. Before, among numeric keys a `null` key was compared as `0`, so it now
+  moves before negative numbers: `[-1, null, 1]` used to stay in that order and now becomes
   `[null, -1, 1]`. Keys of mixed types (numbers and strings) still have no
   defined order. Selectors still receive only the item.
 - Landing page (`index.html`, GitHub Pages only, not in the package) moved to the
