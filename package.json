@@ -1,16 +1,16 @@
 {
   "name": "@romatech/order-by",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Chainable multi-level sorting for JavaScript arrays via orderBy() and thenBy()",
   "author": "RomaTech/Leandro Romanelli",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/RomaTech-LTDA/order-by"
+    "url": "git+https://github.com/leandroromanelli/order-by.git"
   },
-  "homepage": "https://github.com/RomaTech-LTDA/order-by#readme",
+  "homepage": "https://github.com/leandroromanelli/order-by#readme",
   "bugs": {
-    "url": "https://github.com/RomaTech-LTDA/order-by/issues"
+    "url": "https://github.com/leandroromanelli/order-by/issues"
   },
   "main": "index.js",
   "module": "index.mjs",

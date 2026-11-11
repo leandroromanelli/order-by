@@ -108,24 +108,24 @@ Chains a descending secondary sort.
 ```ts
 type Selector<T> = (item: T) => any;
 
-	interface OrderedArray<T> extends Array<T> {
-	  thenBy(fn: Selector<T>): OrderedArray<T>;
-	  thenByDesc(fn: Selector<T>): OrderedArray<T>;
-	}
+interface OrderedArray<T> extends Array<T> {
+  thenBy(fn: Selector<T>): OrderedArray<T>;
+  thenByDesc(fn: Selector<T>): OrderedArray<T>;
+}
 
-	interface Array<T> {
-	  orderBy(fn: Selector<T>): OrderedArray<T>;
-	  orderByDesc(fn: Selector<T>): OrderedArray<T>;
-	}
-
-}` 
+interface Array<T> {
+  orderBy(fn: Selector<T>): OrderedArray<T>;
+  orderByDesc(fn: Selector<T>): OrderedArray<T>;
+}
 ```
+
+Keys that are `null`, `undefined` or `NaN` are treated as equal to each other and smaller than any other key: they come first with `orderBy`/`thenBy` and last with `orderByDesc`/`thenByDesc`, as `null` does in C#. Keys of mixed types (for example numbers and strings) have no defined order.
 ----------
 
 ## 🧪 Tests
 
 ```bash
-npm install
+npm ci
 npm test
 ```
 All tests are implemented with [Jest](https://jestjs.io) and validate sorting logic and method chaining behavior.

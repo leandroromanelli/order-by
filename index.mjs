@@ -1,4 +1,14 @@
+// null, undefined and NaN are not ordered by < and >, which made the
+// comparator inconsistent and left the result unsorted. Treat them as equal
+// to each other and smaller than any other value (like null in C#).
+function isMissingKey(value) {
+  return value === null || value === undefined || (typeof value === 'number' && Number.isNaN(value));
+}
+
 function compare(a, b) {
+  const aMissing = isMissingKey(a);
+  const bMissing = isMissingKey(b);
+  if (aMissing || bMissing) return aMissing === bMissing ? 0 : aMissing ? -1 : 1;
   if (a < b) return -1;
   if (a > b) return 1;
   return 0;
